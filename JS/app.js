@@ -1,3 +1,24 @@
+import ref from "./test.js";
+import { addDoc } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
+
+async function addDocument_AutoID(inputs) {
+  //   var ref = collection(db, "quotes");
+  const docRef = await addDoc(ref, {
+    amount: 789,
+    details: "Some details about the new doc",
+    anotherField: "another field",
+    // needs to be structured something like this
+    skid: inputs,
+  })
+    // will need to display message in the DOM
+    .then(() => {
+      alert("Data added successfully");
+    })
+    .catch((error) => {
+      alert("Unsuccessful operation, error:" + error);
+    });
+}
+
 const numPieces = document.querySelector(".number-pieces");
 const shipmentServiceType = document.querySelector(".shipment-service-type");
 const hsCodes = document.querySelector(".hs-codes");
@@ -78,6 +99,8 @@ if (submitBtn) {
         }
       });
     });
+    console.log(arrInput);
+    addDocument_AutoID(arrInput);
   });
 }
 
