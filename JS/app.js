@@ -14,32 +14,35 @@ const skidDimensions = document.querySelector(".skid-dimensions");
 const skidTypeWrapper = document.querySelector(".skid-type-wrapper");
 
 let submitBtn = document.querySelector(".submit");
-window.addEventListener("DOMContentLoaded", () => {
-  let templateSkidTypes = `<input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="0" class="skid-type"><br>
-                            <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="1" class="skid-type"><br>
-                            <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="2" class="skid-type">`;
 
-  let templateSkidDimensions = `<div class="dimensions-wrapper">
-                                  <input type="text" placeholder="Length" class="dimensions-input length" data-count="0">
-                                  <input type="text" placeholder="Width" class="dimensions-input width" data-count="0">
-                                  <input type="text" placeholder="Height" class="dimensions-input height" data-count="0">
-                                </div>
-                                <div class="dimensions-wrapper">
-                                  <input type="text" placeholder="Length" class="dimensions-input length" data-count="1">
-                                  <input type="text" placeholder="Width" class="dimensions-input width" data-count="1">
-                                  <input type="text" placeholder="Height" class="dimensions-input height" data-count="1">
-                                </div>
-                                <div class="dimensions-wrapper">
-                                  <input type="text" placeholder="Length" class="dimensions-input length" data-count="2">
-                                  <input type="text" placeholder="Width" class="dimensions-input width" data-count="2">
-                                  <input type="text" placeholder="Height" class="dimensions-input height" data-count="2">
-                                </div>`;
+if (window.location.href.split("/")[3]) {
+  window.addEventListener("DOMContentLoaded", () => {
+    let templateSkidTypes = `<input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="0" class="skid-type"><br>
+                                  <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="1" class="skid-type"><br>
+                                  <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="2" class="skid-type">`;
 
-  skidTypeWrapper.insertAdjacentHTML("afterbegin", templateSkidTypes);
-  skidDimensions.insertAdjacentHTML("afterbegin", templateSkidDimensions);
+    let templateSkidDimensions = `<div class="dimensions-wrapper">
+                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="0">
+                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="0">
+                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="0">
+                                      </div>
+                                      <div class="dimensions-wrapper">
+                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="1">
+                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="1">
+                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="1">
+                                      </div>
+                                      <div class="dimensions-wrapper">
+                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="2">
+                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="2">
+                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="2">
+                                      </div>`;
 
-  displaySkidInputs();
-});
+    skidTypeWrapper.insertAdjacentHTML("afterbegin", templateSkidTypes);
+    skidDimensions.insertAdjacentHTML("afterbegin", templateSkidDimensions);
+
+    displaySkidInputs();
+  });
+}
 
 function displaySkidInputs() {
   numSkids.addEventListener("input", () => {
@@ -58,23 +61,25 @@ function displaySkidInputs() {
   });
 }
 
-submitBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+if (submitBtn) {
+  submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  let inputs = document.querySelectorAll(".dimensions-input");
-  let skidTypes = document.querySelectorAll(".skid-type");
+    let inputs = document.querySelectorAll(".dimensions-input");
+    let skidTypes = document.querySelectorAll(".skid-type");
 
-  let arrInput = [];
-  inputs.forEach((input) => {
-    skidTypes.forEach((type, i) => {
-      if (input.dataset.count === type.dataset.count) {
-        arrInput.push(
-          `${type.value} ${i} - ${input.placeholder}: ${input.value}`
-        );
-      }
+    let arrInput = [];
+    inputs.forEach((input) => {
+      skidTypes.forEach((type, i) => {
+        if (input.dataset.count === type.dataset.count) {
+          arrInput.push(
+            `${type.value} ${i} - ${input.placeholder}: ${input.value}`
+          );
+        }
+      });
     });
   });
-});
+}
 
 const burger = document.querySelector(".burger");
 const nav = document.querySelector(".nav-links");

@@ -31,6 +31,20 @@
   padding: 20px 10px;
 }
 
+.hero-logo {
+  max-width: 80vw;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.5)),
+    url("/assets/ocean.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
