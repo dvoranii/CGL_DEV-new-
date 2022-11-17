@@ -4,12 +4,11 @@ import {
   collection,
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
-
 // import "./apikey.js";
-import { API_KEY } from "./apikey.js";
+// import { API_KEY } from "./apikey.js";
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyDaN8wrzCDOfyhNBevzyb1nX8g25WT_V2c",
   authDomain: "cgl-forms.firebaseapp.com",
   databaseURL: "https://cgl-forms-default-rtdb.firebaseio.com",
   projectId: "cgl-forms",
@@ -49,6 +48,8 @@ const weightUnits = document.querySelector(".weight-units");
 const hazardous = document.querySelector(".hazardous");
 const checkbox = document.querySelector(".checkbox");
 const fullName = document.getElementById("fullName");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
 const companyName = document.getElementById("companyName");
 const pickupInfo = document.getElementById("pickupInfo");
 const shippingInfo = document.getElementById("shippingInfo");
@@ -123,6 +124,7 @@ if (submitBtn) {
     });
     console.log(arrInput);
     addDocument_AutoID(arrInput);
+    sendMail();
   });
 }
 
