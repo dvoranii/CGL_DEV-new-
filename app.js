@@ -5,10 +5,10 @@ import {
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 // import "./apikey.js";
-// import { API_KEY } from "./apikey.js";
+import { API_KEY } from "./apikey.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDaN8wrzCDOfyhNBevzyb1nX8g25WT_V2c",
+  apiKey: API_KEY,
   authDomain: "cgl-forms.firebaseapp.com",
   databaseURL: "https://cgl-forms-default-rtdb.firebaseio.com",
   projectId: "cgl-forms",
