@@ -124,7 +124,6 @@ if (submitBtn) {
     });
     console.log(arrInput);
     addDocument_AutoID(arrInput);
-    sendMail();
   });
 }
 
