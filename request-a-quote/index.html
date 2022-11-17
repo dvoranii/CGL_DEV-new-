@@ -55,17 +55,17 @@
         </div>
       </nav>
 <div class="container">
-    <form class="form-wrapper-grid" data-netlify="true" id="myForm" method="GET" action="/success.html">
+    <form class="form-wrapper-grid" id="myForm" method="POST" action="" data-netlify="true">
         <div class="company-info-a">
           <label for="">Company Information</label>
-          <input id="fullName" type="text" placeholder="*Your Name" required/>
-          <input id="companyName" type="text" placeholder="Company Name" required />
+          <input name="name" id="fullName" type="text" placeholder="*Your Name" required/>
+          <input name="companyName" id="companyName" type="text" placeholder="Company Name" required />
         </div>
         <div class="company-info-b">
           <label for="">&nbsp;</label>
         
-          <input id="email" type="email" placeholder="email" required/>
-          <input id="phone" type="tel" placeholder="*Phone number" required />
+          <input name="email" id="email" type="email" placeholder="email" required/>
+          <input name="phone" id="phone" type="tel" placeholder="*Phone number" required />
         </div>
 
         <div class="pickup-info">
@@ -79,6 +79,7 @@
             cols="30"
             rows="10"
             placeholder="* Pick up address or origin Airport port"
+            name="pickupInfo"
           ></textarea>
         </div>
 
@@ -93,6 +94,7 @@
             cols="30"
             rows="10"
             placeholder="* Shipping address, origin or airport port"
+            name="shippingInfo"
           ></textarea>
         </div>
 
@@ -104,17 +106,20 @@
             type="text"
             placeholder="* Number of skids"
             class="number-skids"
+            name="numSkids"
           />
           <input
             type="text"
             placeholder="* Number of pieces"
             class="number-pieces"
+            name="numPieces"
           />
           <select
             name=""
             id=""
             placeholder="* Service"
             class="shipment-service-type"
+            name="serviceType"
           >
             <option value="" selected disabled hidden>* Service</option>
             <option value="">Air</option>
@@ -124,6 +129,7 @@
             type="text"
             placeholder="Commodity and HS Codes"
             class="hs-codes"
+            name="hsCodes"
           />
         </div>
         <!-- ------------------------------ -->
@@ -131,12 +137,12 @@
         <div class="shippment-cont">
           <p class="spacer">&nbsp;</p>
           <input type="text" class="cell1 weight" placeholder="* Weight"></input>
-          <select name="" id="" class="cell2 weight-units">
+          <select name="" id="" class="cell2 weight-units" name="weight">
             <option value="" selected disabled hidden>* Units Lbs or Kg</option>
             <option value="">Lbs</option>
             <option value="">Kg</option>
           </select>
-          <select name="" id="" class="cell3 hazardous">
+          <select name="" id="" class="cell3 hazardous" name="hazardous">
 
             <option value="" selected disabled hidden>* Hazardous Yes or No</option>
             <option value="">Hazardous - YES</option>
@@ -144,7 +150,7 @@
           </select>
           <div class="checkbox-wrapper" class="cell4">
            
-            <input type="checkbox" class="checkbox">
+            <input type="checkbox" class="checkbox" name="personal">
             <label for="" class="checkbox-label">Non Personal Effects</label>
           </div>
         </div>
@@ -158,7 +164,7 @@
         </div>
 
         <div class="additional-info">
-          <textarea name="" id="" cols="30" rows="10" placeholder="Additional information or Special instructions"></textarea>
+          <textarea name="" id="" cols="30" rows="10" placeholder="Additional information or Special instructions" name="additionalInfo"></textarea>
         </div>
 
         <div class="submit-btn-container">

@@ -5,10 +5,10 @@ import {
   addDoc,
 } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore.js";
 // import "./apikey.js";
-import { API_KEY } from "./apikey.js";
+// import { API_KEY } from "./apikey.js";
 
 const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyDaN8wrzCDOfyhNBevzyb1nX8g25WT_V2c",
   authDomain: "cgl-forms.firebaseapp.com",
   databaseURL: "https://cgl-forms-default-rtdb.firebaseio.com",
   projectId: "cgl-forms",
@@ -61,24 +61,24 @@ let submitBtn = document.querySelector(".submit");
 
 if (window.location.href.split("/")[3]) {
   window.addEventListener("DOMContentLoaded", () => {
-    let templateSkidTypes = `<input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="0" class="skid-type"><br>
-                                  <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="1" class="skid-type"><br>
-                                  <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="2" class="skid-type">`;
+    let templateSkidTypes = `<input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="0" class="skid-type" name='skid-type'><br>
+                                  <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="1" class="skid-type" name='skid-type'><br>
+                                  <input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="2" class="skid-type" name='skid-type'>`;
 
     let templateSkidDimensions = `<div class="dimensions-wrapper">
-                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="0">
-                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="0">
-                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="0">
+                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="0" name='length'>
+                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="0" name='width'>
+                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="0" name='height'>
                                       </div>
                                       <div class="dimensions-wrapper">
-                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="1">
-                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="1">
-                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="1">
+                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="1" name='length'>
+                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="1" name='width'>
+                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="1" name='height'>
                                       </div>
                                       <div class="dimensions-wrapper">
-                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="2">
-                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="2">
-                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="2">
+                                        <input type="text" placeholder="Length" class="dimensions-input length" data-count="2" name='length'>
+                                        <input type="text" placeholder="Width" class="dimensions-input width" data-count="2" name='width'>
+                                        <input type="text" placeholder="Height" class="dimensions-input height" data-count="2" name='height'>
                                       </div>`;
 
     skidTypeWrapper.insertAdjacentHTML("afterbegin", templateSkidTypes);
@@ -93,11 +93,11 @@ function displaySkidInputs() {
     skidTypeWrapper.innerHTML = "";
     skidDimensions.innerHTML = "";
     for (let i = 0; i < numSkids.value; i++) {
-      let templateSkidTypes = `<input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="${i}" class="skid-type">`;
+      let templateSkidTypes = `<input type="text" placeholder="Type: (Skid, Carton, Tube etc)" data-count="${i}" class="skid-type" name='skid-type'>`;
       let templateSkidDimensions = `<div class="dimensions-wrapper">
-                                    <input type="text" placeholder="Length" class="dimensions-input length" data-count="${i}">
-                                    <input type="text" placeholder="Width" class="dimensions-input width" data-count="${i}">
-                                    <input type="text" placeholder="Height" class="dimensions-input height" data-count="${i}">
+                                    <input type="text" placeholder="Length" class="dimensions-input length" data-count="${i}" name='length'>
+                                    <input type="text" placeholder="Width" class="dimensions-input width" data-count="${i}" name='width'>
+                                    <input type="text" placeholder="Height" class="dimensions-input height" data-count="${i}" name='height'>
                                   </div>`;
       skidTypeWrapper.insertAdjacentHTML("beforeend", templateSkidTypes);
       skidDimensions.insertAdjacentHTML("beforeend", templateSkidDimensions);
