@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../style.css" />
+    <title>About</title>
   </head>
   <body>
     <nav class="nav">
@@ -15,21 +15,17 @@
         </a>
       </div>
       <ul class="nav-links">
-        <li class="nav__link">
-          <a href="../" class="nav__link" data-link>Home</a>
-        </li>
-        <li class="nav__link">
-          <a href="./about/" class="nav__link" data-link>About</a>
-        </li>
+        <li class="nav__link"><a href="../" data-link>Home</a></li>
+        <li class="nav__link"><a href="../about" data-link>About</a></li>
         <li class="nav__link">
           <a href="#" data-link class="transportation-link">Services&nbsp;▾</a>
           <ul class="transportation-submenu">
-            <li class="transportation-submenu-wrapper">
+            <li class="transportation-submenu-wrapper nav__link">
               <a
                 href="../services/transportation"
                 data-link
                 class="transportation-link"
-                >Transportation▾</a
+                >Transportation&nbsp;</a
               >
               <ul class="transportation-submenu-a">
                 <li><a href="../services/transportation/air">Air</a></li>
@@ -49,13 +45,17 @@
           </ul>
         </li>
         <li class="nav__link">
-          <a href="/request-a-quote/" data-link>Request&nbsp;a&nbsp;Quote</a>
+          <a href="../request-a-quote" data-link>Request&nbsp;a&nbsp;Quote</a>
         </li>
         <li class="nav__link">
           <a href="#" class="contact-link">Contact&nbsp;▾</a>
           <ul class="contact-submenu">
             <li><a href="../contact-on" data-link>Ontario Office</a></li>
-            <li><a href="../contact-qc" data-link>Quebec Office</a></li>
+            <li>
+              <a href="../contact-qc" class="nav__link" data-link
+                >Quebec Office</a
+              >
+            </li>
           </ul>
         </li>
       </ul>
@@ -66,12 +66,6 @@
         <div class="line3"></div>
       </div>
     </nav>
-
-    <div class="home-container">
-      <div class="container">
-        <img class="hero-logo" src="/assets/CGL-logo.png" alt="" />
-      </div>
-    </div>
 
     <div class="container">
       <p>
@@ -129,6 +123,6 @@
         molestiae voluptates.
       </p>
     </div>
-    <script type="module" src="app.js"></script>
+    <script type="module" src="/app.js"></script>
   </body>
 </html>

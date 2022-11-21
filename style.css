@@ -6,6 +6,9 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 /* NAV */
 
 .burger div {
@@ -65,6 +68,11 @@ nav {
   color: rgba(255, 226, 226);
   text-decoration: none;
   letter-spacing: 1.2px;
+  transition: all 150ms ease;
+}
+
+.nav-links a:hover {
+  color: rgb(10, 6, 255);
 }
 
 /* do some dropdown menu animations */
@@ -99,8 +107,11 @@ nav {
   list-style: none;
   opacity: 0;
   background: black;
-  margin-top: -4px;
-  /* padding: 10px; */
+  padding: 10px 0px 10px 10px;
+}
+
+.contact-submenu {
+  padding: 10px;
 }
 
 .contact-link:hover + .contact-submenu,
@@ -120,8 +131,8 @@ nav {
 .transportation-submenu-a {
   list-style: none;
   position: absolute;
-  right: -87%;
-  top: 0;
+  right: -78%;
+  top: -10px;
   background: black;
   padding: 10px;
   opacity: 0;
@@ -132,6 +143,89 @@ nav {
 .transportation-submenu-a:hover {
   animation: fadeInSlideDown 0.5s ease forwards;
   pointer-events: all;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 2.4rem 0 2.4rem 0;
+}
+
+.title-wrapper.sporting-title-wrapper {
+  margin-bottom: 3.2rem;
+  padding: 2.4rem 0 2.4rem 0;
+  background-color: rgb(112, 112, 112);
+  justify-content: center;
+}
+
+.title-wrapper img {
+  width: 90px;
+  height: auto;
+}
+
+.service-freight-wrapper {
+  display: flex;
+  align-items: center;
+}
+.service-freight-wrapper p {
+  padding-left: 20px;
+}
+.service-freight-wrapper img {
+  width: 30vw;
+}
+
+.title-wrapper.sporting-title-wrapper p {
+  padding-left: 1.2rem;
+}
+
+.warehouse-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+}
+.warehouse-wrapper img {
+  max-width: 80%;
+}
+
+.warehouse-list {
+  padding-left: 1.8rem;
+  padding-top: 1.2rem;
+}
+
+.sporting-goods-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.sporting-goods-grid img {
+  max-width: 400px;
+  width: 100%;
+}
+
+.air-service-cell img {
+  grid-column: 1;
+}
+
+.air-service-cell p {
+  grid-column: 2;
+}
+
+.sporting-goods-grid p {
+  padding-top: 3.2rem;
+  padding-left: 1.2rem;
+}
+
+.sporting-goods-grid h2 {
+  padding-bottom: 1.2rem;
+}
+
+.sporting-goods-grid div {
+  max-height: 400px;
+}
+
+.hero-logo {
+  max-width: 80vw;
 }
 
 /* body */
