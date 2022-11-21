@@ -1,4 +1,6 @@
-*.json
+
+.json
 /node_modules
+.vscode
 
 # apikey.js
