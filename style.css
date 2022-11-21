@@ -228,10 +228,14 @@ nav {
   max-width: 80vw;
 }
 
+.grid-cell img {
+  max-width: 30vw;
+}
 /* body */
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding-bottom: 9.6rem;
 }
 .form-wrapper-grid {
   display: grid;
@@ -292,6 +296,27 @@ input.checkbox {
 }
 .additional-info textarea {
   width: 100%;
+}
+
+.contact-submenu,
+.transportation-submenu {
+  position: absolute;
+  list-style: none;
+  opacity: 0;
+  background: black;
+  margin-top: -4px;
+  /* padding: 10px; */
+}
+
+.contact-link:hover + .contact-submenu,
+.contact-submenu:hover {
+  animation: fadeInSlideDown 0.5s ease forwards;
+}
+
+.transportation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
 }
 
 /* Media Queries */
