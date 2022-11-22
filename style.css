@@ -371,3 +371,19 @@ input.checkbox {
     transform: translateX(0px);
   }
 }
+
+.line1,
+.line2,
+.line3 {
+  transition: all 150ms ease;
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
